@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-
 <html lang="uk">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Список покупок</title>
+    <title>Працюючий список покупок</title>
     <link rel="stylesheet" href="main.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
@@ -14,101 +13,107 @@
 
   <body>
     <div class="core">
-      <div class="container item-adder">
-        <div class="container-adder">
-          <div class="adder">
-            <input type="text" placeholder="Назва товару" />
-            <button data-tooltip="Додати новий товар">Додати</button>
+      <div class="shopping-list">
+        <div class="item-adder">
+          <input
+            class="item-adder__input"
+            type="text"
+            placeholder="Назва товару"
+          />
+          <button class="item-adder__button" data-tooltip="Додати новий товар">
+            Додати
+          </button>
+        </div>
+
+        <div class="item-list">
+          <div class="item">
+            <div class="item__left-part">
+              <span class="item__name--bought">Помідори</span>
+            </div>
+            <div class="item__center-part">
+              <span class="item__quantity">2</span>
+            </div>
+            <div class="item__right-part">
+              <button class="item__status-button" data-tooltip="Статус товару">
+                Не куплено
+              </button>
+            </div>
           </div>
 
-          <div class="shopping-list">
-            <div class="item bought">
-              <div class="info-left">
-                <span class="name">Помідори</span>
-              </div>
-
-              <div class="info-center">
-                <span class="quantity">2</span>
-              </div>
-
-              <div class="info-right">
-                <button class="status" data-tooltip="Статус товару">
-                  Не куплено
-                </button>
-              </div>
+          <div class="item">
+            <div class="item__left-part">
+              <span class="item__name">Печиво</span>
             </div>
-
-            <div class="item">
-              <div class="info-left">
-                <span class="name">Печиво</span>
-              </div>
-
-              <div class="info-center">
-                <button class="minus" data-tooltip="Прибрати">−</button>
-                <span class="quantity">2</span>
-                <button class="plus" data-tooltip="Додати">+</button>
-              </div>
-
-              <div class="info-right">
-                <button class="status" data-tooltip="Статус товару">
-                  Куплено
-                </button>
-                <button class="remove" data-tooltip="Скасувати">✖</button>
-              </div>
+            <div class="item__center-part">
+              <button class="item__minus-button" data-tooltip="Прибрати">
+                −
+              </button>
+              <span class="item__quantity">2</span>
+              <button class="item__plus-button" data-tooltip="Додати">+</button>
             </div>
+            <div class="item__right-part">
+              <button class="item__status-button" data-tooltip="Статус товару">
+                Куплено
+              </button>
+              <button class="item__remove-button" data-tooltip="Скасувати">
+                ✖
+              </button>
+            </div>
+          </div>
 
-            <div class="item input">
-              <div class="info-left">
-                <input class="name" value="Сир" />
-              </div>
-
-              <div class="info-center">
-                <button
-                  class="minus min"
-                  data-tooltip="Обрано мінімальну кількість"
-                >
-                  −
-                </button>
-                <span class="quantity">1</span>
-                <button class="plus" data-tooltip="Додати">+</button>
-              </div>
-
-              <div class="info-right">
-                <button class="status" data-tooltip="Статус товару">
-                  Куплено
-                </button>
-                <button class="remove" data-tooltip="Скасувати">✖</button>
-              </div>
+          <div class="item">
+            <div class="item__left-part">
+              <input class="item__rename-input" value="Сир" />
+            </div>
+            <div class="item__center-part">
+              <button
+                class="item__minus-button--min"
+                data-tooltip="Обрано мінімальну кількість"
+              >
+                −
+              </button>
+              <span class="item__quantity">1</span>
+              <button class="item__plus-button" data-tooltip="Додати">+</button>
+            </div>
+            <div class="item__right-part">
+              <button class="item__status-button" data-tooltip="Статус товару">
+                Куплено
+              </button>
+              <button class="item__remove-button" data-tooltip="Скасувати">
+                ✖
+              </button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="container summary">
-        <div class="container-summary">
-          <h2 class="summary-header bottom-line">Залишилося</h2>
+      <div class="summary">
+        <h2 class="summary__header">Залишилося</h2>
+        <div class="summary__list">
+          <span class="summary__item"
+            ><span class="summary__name">Печиво</span>
+            <span class="summary__count">2</span></span
+          >
+          <span class="summary__item"
+            ><span class="summary__name">Сир</span>
+            <span class="summary__count">1</span></span
+          >
+        </div>
 
-          <div class="item-status-list">
-            <span class="item-status">Печиво <span class="count">2</span></span>
-            <span class="item-status">Сир <span class="count">1</span></span>
-          </div>
-
-          <h2 class="summary-header bottom-line top-line">Куплено</h2>
-
-          <div class="item-status-list bought">
-            <span class="item-status">
-              <span>Помідори</span>
-              <span class="count">2</span>
-            </span>
-          </div>
+        <h2 class="summary__header">Куплено</h2>
+        <div class="summary__list">
+          <span class="summary__item--bought"
+            ><span class="summary__name">Помідори</span>
+            <span class="summary__count">2</span></span
+          >
         </div>
       </div>
     </div>
 
     <div class="badge">
-      <span class="badge-label">Buy List</span>
-      <span class="badge-author"><br />Created by:<br /></span>
-      <span class="badge-name">Koval Rostyslav</span>
+      <span class="badge__label">Buy List</span>
+      <span class="badge__author"><br />Created by:<br /></span>
+      <span class="badge__author-name">Koval Rostyslav</span>
     </div>
   </body>
 </html>
