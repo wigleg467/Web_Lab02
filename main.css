@@ -41,47 +41,43 @@ button {
 }
 
 button::after {
-  content: attr(data-tooltip);
   background-color: var(--tooltip-background-color);
-  color: var(--text-white-color);
-  font-weight: bold;
-  font-size: 10px;
-  white-space: nowrap;
-
-  position: absolute;
-  bottom: 120%;
-  left: 50%;
-  transform: translateX(-50%) translateY(10px) scale(0.5);
-  padding: 8px 16px;
   border-radius: 12px;
-
-  transition: all 0.5s ease;
+  bottom: 120%;
+  color: var(--text-white-color);
+  content: attr(data-tooltip);
+  font-size: 10px;
+  font-weight: bold;
+  left: 50%;
   opacity: 0;
+  padding: 8px 16px;
+  position: absolute;
+  transform: translateX(-50%) translateY(10px) scale(0.5);
+  transition: all 0.5s ease;
+  white-space: nowrap;
 }
 
 button:hover::after {
-  transform: translateX(-50%) translateY(0) scale(1);
-
   opacity: 1;
+  transform: translateX(-50%) translateY(0) scale(1);
 }
 
 .core {
+  align-items: flex-start;
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
-  justify-content: center;
-
   gap: clamp(8px, 3vw, 40px);
+  justify-content: center;
 }
 
 .shopping-list,
 .summary {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
   background: var(--background-white-color);
   border-radius: var(--conteiner-border-radius);
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex: 1;
+  flex-direction: column;
 }
 
 /* ############ Shopping list ############ */
@@ -98,57 +94,55 @@ button:hover::after {
 }
 
 .item-adder__input {
-  padding: 12px 15px;
-  font-size: 17px;
-  width: 100%;
-
   border: var(--border);
+  border-bottom-left-radius: var(--button-border-radius);
   border-right: none;
   border-top-left-radius: var(--button-border-radius);
-  border-bottom-left-radius: var(--button-border-radius);
+  font-size: 17px;
+  padding: 12px 15px;
+  width: 100%;
 }
 
 .item-adder__button {
   background-color: var(--button-blue-color);
-  color: var(--text-white-color);
-  font-weight: 700;
-  font-size: 18px;
-  padding: 0px 35px;
-  box-shadow: inset 0 -6px 2px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-
   border: none;
-  border-top-right-radius: var(--button-border-radius);
   border-bottom-right-radius: var(--button-border-radius);
+  border-top-right-radius: var(--button-border-radius);
+  box-shadow: inset 0 -6px 2px rgba(0, 0, 0, 0.2);
+  color: var(--text-white-color);
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 0px 35px;
 }
 
 .item {
-  border-top: var(--border);
-  padding: 10px 20px;
-  display: flex;
   align-items: center;
+  border-top: var(--border);
+  display: flex;
+  padding: 10px 20px;
 }
 
 /* ############ Left Part ############ */
 
 .item__left-part {
+  align-items: center;
   display: flex;
   flex: 1 1 300px;
-  align-items: center;
   max-width: 100%;
 }
 
 .item__name,
 .item__name--bought {
+  display: block;
   font-size: 18px;
   font-weight: 500;
+  min-width: 100px;
+  overflow-wrap: break-word;
   padding: 10px 0;
-  display: block;
+  white-space: normal;
   width: 100%;
   word-break: break-word;
-  overflow-wrap: break-word;
-  white-space: normal;
-  min-width: 100px;
 }
 
 .item__name--bought {
@@ -156,49 +150,49 @@ button:hover::after {
 }
 
 .item__rename-input {
-  width: 50%;
-  min-width: 80px;
-  font-size: 13px;
-  padding: 5px 7px;
-  margin: 10px 0px;
   border: 2px solid var(--border-blue-color);
   border-radius: 2px;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+  font-size: 13px;
+  margin: 10px 0px;
+  min-width: 80px;
+  padding: 5px 7px;
+  width: 50%;
 }
 
 /* ############ Central Part ############ */
 
 .item__center-part {
-  flex: 1 1 200px;
-  min-width: 150px;
-  display: flex;
-  justify-content: center;
   align-items: center;
+  display: flex;
+  flex: 1 1 200px;
   gap: 6px;
+  justify-content: center;
+  min-width: 150px;
 }
 
 .item__quantity {
   background: var(--button-gray-color);
+  border-radius: 5px;
   color: var(--text-gray-color);
   display: inline-block;
-  width: 24px;
-  text-align: center;
-  padding: 8px 5px;
-  border-radius: 5px;
-  font-weight: bold;
   font-size: 14px;
+  font-weight: bold;
+  padding: 8px 5px;
+  text-align: center;
+  width: 24px;
 }
 
 .item__minus-button,
 .item__plus-button,
 .item__minus-button--min {
-  font-size: 16px;
-  font-weight: bold;
   border: none;
-  padding: 10px 15px;
   border-radius: 50%;
   color: var(--text-white-color);
   cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 15px;
 }
 
 .item__minus-button {
@@ -216,33 +210,33 @@ button:hover::after {
 /* ############ Right Part ############ */
 
 .item__right-part {
-  flex: 1.2 1 300px;
-  min-width: 150px;
-  display: flex;
-  justify-content: right;
   align-items: right;
+  display: flex;
+  flex: 1.2 1 300px;
   gap: 5px;
+  justify-content: right;
+  min-width: 150px;
 }
 
 .item__status-button {
   background: var(--button-light-gray-color);
-  color: var(--text-gray-color);
   border: var(--border);
-  padding: 10px 23px;
-  font-weight: bold;
   border-radius: 5px;
+  color: var(--text-gray-color);
   cursor: pointer;
+  font-weight: bold;
+  padding: 10px 23px;
 }
 
 .item__remove-button {
   background: var(--button-red-color);
-  color: var(--text-white-color);
   border: none;
-  padding: 10px 15px;
   border-radius: 5px;
+  color: var(--text-white-color);
+  cursor: pointer;
   font-size: 10px;
   font-weight: bold;
-  cursor: pointer;
+  padding: 10px 15px;
 }
 
 /* ############ Summary List ############ */
@@ -253,11 +247,11 @@ button:hover::after {
 }
 
 .summary__header {
-  padding: 20px;
-  margin: 0;
-  font-weight: bold;
   border-bottom: var(--border);
   border-top: var(--border);
+  font-weight: bold;
+  margin: 0;
+  padding: 20px;
 }
 
 .summary > .summary__header:first-of-type {
@@ -277,75 +271,70 @@ button:hover::after {
 
 .summary__item,
 .summary__item--bought {
-  background: var(--backgoround-light-gray-color);
-  color: var(--text-gray-color);
-  padding: 5px 10px;
-  border-radius: 6px;
-  font-weight: bold;
-  font-size: 75%;
-  padding: 13px;
-  display: flex;
-  gap: 3px;
   align-items: center;
+  background: var(--backgoround-light-gray-color);
+  border-radius: 6px;
+  color: var(--text-gray-color);
+  display: flex;
+  font-size: 75%;
+  font-weight: bold;
+  gap: 3px;
   justify-content: space-between;
+  padding: 5px 10px;
+  padding: 13px;
 }
 
 .summary__name {
-  width: 100%;
-  word-break: break-word;
   overflow-wrap: break-word;
   white-space: normal;
+  width: 100%;
+  word-break: break-word;
 }
 
 .summary__count {
   background: var(--background-orange-color);
-  color: var(--text-white-color);
   border-radius: 50%;
-  padding: 5px 9px;
+  color: var(--text-white-color);
   margin-left: 1px;
+  padding: 5px 9px;
 }
 
 /* ############ Badge ############ */
 
 .badge {
-  position: fixed;
-  bottom: 0;
-  left: 15px;
-
   background-color: var(--background-pink-color);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  bottom: 0;
   color: var(--text-white-color);
   font-size: 22px;
   font-weight: 900;
-
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  padding: 15px 5px;
-
-  transition: all 0.4s ease-in-out;
-
   height: 26px;
+  left: 15px;
+  padding: 15px 5px;
+  position: fixed;
+  transition: all 0.4s ease-in-out;
   width: 115px;
 }
 
 .badge__label {
+  align-items: center;
   display: flex;
   justify-content: center;
-  align-items: center;
   text-align: center;
 }
 
 .badge__author,
 .badge__author-name {
-  display: flex;
-  justify-content: left;
   align-items: left;
-  text-align: left;
-  padding: 0px 19px;
+  display: flex;
   font-size: 12px;
   font-weight: 400;
-
-  transition: all 0.4s ease-in-out;
+  justify-content: left;
   opacity: 0;
+  padding: 0px 19px;
+  text-align: left;
+  transition: all 0.4s ease-in-out;
 }
 
 .badge__author-name {
@@ -367,8 +356,8 @@ button:hover::after {
 
 @media (max-width: 650px) {
   .core {
-    flex-direction: column;
     align-items: center;
+    flex-direction: column;
     gap: 40px;
   }
 
@@ -386,8 +375,8 @@ button:hover::after {
 @media print {
   .badge {
     background-color: var(--background-white-color);
-    color: var(--text-black-color);
     border: var(--background-purple-color) 1px solid;
+    color: var(--text-black-color);
     height: 40px;
   }
 
