@@ -281,7 +281,6 @@ button:hover::after {
   gap: 3px;
   justify-content: space-between;
   padding: 5px 10px;
-  padding: 13px;
 }
 
 .summary__name {
@@ -365,6 +364,10 @@ button:hover::after {
   .summary {
     max-width: 100%;
     width: 100%;
+  }
+
+  .shopping-list {
+    min-width: 440px;
   }
 
   .item__rename-input {
